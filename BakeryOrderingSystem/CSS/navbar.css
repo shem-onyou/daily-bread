@@ -1,0 +1,102 @@
+/* ── Profile image in navbar ── */
+.nav-profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 2px solid #f0e8e3;
+    flex-shrink: 0;
+}
+
+/* ── Hamburger button ── */
+.nav-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #553423;
+    font-size: 1.6rem;
+    padding: 0;
+    line-height: 1;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.nav-hamburger:hover { color: #96715e; }
+
+/* ── Left group: hamburger + logo ── */
+@media (max-width: 1024px) {
+    .nav-hamburger { display: flex; }
+    .nav-menu      { display: none; }
+    .navbar        { position: sticky; top: 0; }
+
+    .nav-container {
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+
+    .nav-hamburger {
+        order: 0;
+        margin-right: 0.5rem;
+    }
+
+    .nav-logo {
+        order: 1;
+        flex: 1;
+    }
+
+    .nav-icons {
+        order: 2;
+    }
+}
+/* ── Mobile dropdown menu ── */
+.nav-dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: #F4e8e1;
+    border-top: 1px solid rgba(85,52,35,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    padding: 0.5rem 0;
+}
+
+.nav-dropdown.open { display: flex; }
+
+.nav-dropdown a {
+    padding: 0.85rem 1.5rem;
+    color: #2C2C2C;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-left: 3px solid transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown a:hover,
+.nav-dropdown a.active-link {
+    background-color: rgba(150,113,94,0.08);
+    border-left-color: #96715e;
+    color: #553423;
+}
+
+@media (max-width: 480px) {
+    .nav-dropdown a { font-size: 0.82rem; padding: 0.7rem 1.25rem; }
+    .nav-profile-img {
+        width: 26px;
+        height: 26px;
+        border-width: 1.5px;
+    }
+}
+
+/* Show hamburger on tablet and mobile */
+@media (max-width: 1024px) {
+    .nav-hamburger { display: flex; }
+    .nav-menu      { display: none; }
+    .navbar        { position: sticky; top: 0; }
+}

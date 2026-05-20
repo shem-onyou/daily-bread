@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2C2C2C;
+    background-color: #F4e8e1;
+    line-height: 1.6;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #96715e;
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #7d5b3f;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Auth Pages */
+.auth-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #F4e8e1;
+}
+
+.auth-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.auth-container h2 {
+    color: #553423;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2C2C2C;
+    font-weight: 500;
+}
+
+.form-group input:not([type="checkbox"]),
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #2C2C2C;
+    background-color: white;
+    transition: border-color 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-group input:not([type="checkbox"]):focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #96715e;
+}
+
+.pw-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.pw-wrap input {
+    padding-right: 2.75rem !important;
+}
+
+.pw-toggle {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.pw-toggle:hover { color: #553423; }
+
+.pw-hint {
+    font-size: 0.78rem;
+    margin-top: 0.35rem;
+    min-height: 1rem;
+}
+
+.pw-hint--error { color: #c0392b; }
+.pw-hint--ok    { color: #27ae60; }
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.remember-me input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.remember-me label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.forgot-password {
+    margin-left: auto;
+    color: #96715e;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+    color: #7d5b3f;
+    text-decoration: underline;
+}
+
+.auth-link {
+    margin-top: 1.5rem;
+    color: #666;
+}
+
+.auth-link a {
+    color: #96715e;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-link a:hover {
+    color: #7d5b3f;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .auth-section {
+        padding: 2rem 1rem;
+    }
+
+    .auth-container {
+        padding: 2rem;
+    }
+
+    .auth-container h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-section {
+        padding: 1rem;
+    }
+
+    .auth-container {
+        padding: 1.5rem;
+    }
+
+    .auth-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .form-group input:not([type="checkbox"]),
+    .form-group select {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ── Signup two-step styles ── */
+.auth-container--wide {
+    max-width: 520px;
+}
+
+.auth-subtitle {
+    color: #888;
+    font-size: 0.95rem;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}
+
+.signup-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+}
+
+.signup-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.step-num {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #e0d5cf;
+    color: #aaa;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+.signup-step.active .step-num {
+    background: #96715e;
+    color: white;
+}
+
+.step-label {
+    font-size: 0.75rem;
+    color: #aaa;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.signup-step.active .step-label {
+    color: #96715e;
+    font-weight: 600;
+}
+
+.signup-step-line {
+    flex: 1;
+    height: 2px;
+    background: #e0d5cf;
+    margin: 0 12px;
+    margin-bottom: 20px;
+    min-width: 60px;
+    max-width: 100px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.step-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.25rem;
+}
+
+.btn-secondary-outline {
+    background: #e0d5cf;
+    color: #96715e;
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary-outline:hover {
+    background: #c09681;
+    color: white;
+}
+
+.step-actions .btn-primary {
+    flex: 2;
+}
+
+.auth-error {
+    color: #c0392b;
+    background: #fdecea;
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.auth-success {
+    color: #27ae60;
+    background: #eafaf1;
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 540px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .auth-container--wide {
+        max-width: 100%;
+    }
+    .step-actions {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - DailyBread</title>
+    <link rel="stylesheet" href="../CSS/orders.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><span>The DailyBread</span></div>
+            <div class="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+            </div>
+            <div class="nav-icons">
+                <button class="nav-btn orders-btn active-orders" onclick="window.location.href='orders-customer.html'">
+                    <i class='bx bx-shopping-bag'></i>
+                </button>
+                <button class="nav-btn cart-btn" onclick="window.location.href='cart.html'">
+                    <i class='bx bx-cart'></i>
+                </button>
+                <button class="nav-btn profile-btn" onclick="window.location.href='profile.html'">
+                    <i class='bx bx-user'></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main scrollable content -->
+    <main class="page-main">
+
+        <!-- Page Header -->
+        <section class="orders-header">
+            <h1>My Orders</h1>
+            <p>Track and manage your order history</p>
+        </section>
+
+        <!-- Filter Tabs -->
+        <div class="orders-body">
+            <div class="orders-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+                <button class="filter-btn" data-filter="cancelled">Cancelled</button>
+            </div>
+
+            <!-- Empty state -->
+            <div class="orders-empty" id="ordersEmpty">
+                <i class='bx bx-shopping-bag'></i>
+                <p>No orders found.</p>
+                <a href="shop.html" class="btn btn-primary">Start Shopping</a>
+            </div>
+
+            <!-- Orders list -->
+            <div class="orders-list" id="ordersList"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section main">
+                    <h1>The DailyBread</h1>
+                    <p>"Fresh from the oven, straight to your heart"<br>Get your appetizing pastries now.</p>
+                    <div class="social-links">
+                        <a href="#"><i class='bx bxl-facebook'></i></a>
+                        <a href="#"><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="#"><i class='bx bxl-pinterest'></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>abc.123@mail.com</li>
+                        <li>09xxxxxxxxx</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Location</h3>
+                    <p>Gov. Drive, San Juan, Dasmarinas Cavite, 4114</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DailyBread. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Order Detail Modal -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="order-modal">
+            <div class="order-modal-header">
+                <div>
+                    <h3 id="modalOrderId">Order #ORD-001</h3>
+                    <p id="modalOrderDate" class="modal-date"></p>
+                </div>
+                <button class="modal-close" id="modalClose"><i class='bx bx-x'></i></button>
+            </div>
+
+            <div class="order-modal-body">
+
+                <!-- Status badge -->
+                <div class="modal-status-row">
+                    <span class="modal-status-label">Status</span>
+                    <span class="order-status-badge" id="modalStatus"></span>
+                </div>
+
+                <!-- Products -->
+                <div class="modal-section">
+                    <h4><i class='bx bx-package'></i> Items Ordered</h4>
+                    <div class="modal-items" id="modalItems"></div>
+                </div>
+
+                <!-- Pricing -->
+                <div class="modal-section">
+                    <h4><i class='bx bx-receipt'></i> Price Breakdown</h4>
+                    <div class="modal-price-row"><span>Subtotal</span><span id="modalSubtotal"></span></div>
+                    <div class="modal-price-row"><span>Shipping Fee</span><span id="modalShipping"></span></div>
+                    <div class="modal-price-divider"></div>
+                    <div class="modal-price-row total"><span>Total</span><span id="modalTotal"></span></div>
+                </div>
+
+                <!-- Shipping & Contact -->
+                <div class="modal-section">
+                    <h4><i class='bx bx-map'></i> Shipping Details</h4>
+                    <p id="modalAddress" class="modal-detail-text"></p>
+                    <p id="modalContact" class="modal-detail-text"></p>
+                </div>
+
+                <!-- Payment -->
+                <div class="modal-section">
+                    <h4><i class='bx bx-credit-card'></i> Payment</h4>
+                    <p id="modalPayment" class="modal-detail-text"></p>
+                </div>
+
+            </div>
+
+            <div class="order-modal-footer">
+                <button class="btn-cancel-order" id="cancelOrderBtn">
+                    <i class='bx bx-x-circle'></i> Cancel Order
+                </button>
+                <button class="btn-close-modal" id="closeModalBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/orders.js"></script>
+</body>
+</html>

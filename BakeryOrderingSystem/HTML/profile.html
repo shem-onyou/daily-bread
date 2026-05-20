@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - DailyBread</title>
+    <link rel="stylesheet" href="../CSS/profile.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>The DailyBread</span>
+            </div>
+            <div class="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+            </div>
+            <div class="nav-icons">
+                <button class="nav-btn orders-btn" onclick="window.location.href='orders.html'">
+                    <i class='bx bx-shopping-bag'></i>
+                </button>
+                <button class="nav-btn cart-btn" onclick="window.location.href='cart.html'">
+                    <i class='bx bx-cart'></i>
+                </button>
+                <a href="profile.html" class="nav-btn profile-btn active-profile">
+                    <i class='bx bx-user'></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main scrollable content -->
+    <main class="page-main">
+
+        <!-- Page Header -->
+        <section class="profile-header">
+            <h1>My Profile</h1>
+            <p>Manage your personal information and preferences</p>
+        </section>
+
+        <!-- Profile Content -->
+        <div class="profile-content">
+
+            <!-- Card 1: Profile Overview -->
+            <div class="profile-card profile-overview">
+                <div class="profile-avatar-wrap">
+                    <div class="profile-avatar" id="profileAvatar">J</div>
+                    <input type="file" id="avatarInput" accept="image/*" hidden>
+                    <button class="btn-edit-pic" id="editPicBtn">
+                        <i class='bx bx-camera'></i> Change Photo
+                    </button>
+                </div>
+                <div class="profile-meta">
+                    <h2 id="displayFullName">Jane Doe</h2>
+                    <span class="role-badge">Customer</span>
+                    <p class="profile-address">
+                        <i class='bx bx-map'></i>
+                        <span id="displayAddressText">—</span>
+                    </p>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn-profile-action" id="changePasswordBtn">
+                        <i class='bx bx-lock-alt'></i> Change Password
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2: Personal Information -->
+            <div class="profile-card">
+                <div class="profile-section-header">
+                    <div>
+                        <h3>Personal Information</h3>
+                        <p class="profile-subtitle">Your personal details</p>
+                    </div>
+                    <button class="btn-edit-section" id="editPersonalBtn">
+                        <i class='bx bxs-edit'></i> Edit
+                    </button>
+                </div>
+                <div class="info-grid">
+                    <div class="info-field">
+                        <span class="info-label">First Name</span>
+                        <span class="info-value" id="displayFirstName">—</span>
+                    </div>
+                    <div class="info-field">
+                        <span class="info-label">Last Name</span>
+                        <span class="info-value" id="displayLastName">—</span>
+                    </div>
+                    <div class="info-field">
+                        <span class="info-label">Date of Birth</span>
+                        <span class="info-value" id="displayDob">—</span>
+                    </div>
+                    <div class="info-field">
+                        <span class="info-label">Email Address</span>
+                        <span class="info-value" id="displayEmail">—</span>
+                    </div>
+                    <div class="info-field">
+                        <span class="info-label">Phone Number</span>
+                        <span class="info-value" id="displayPhone">—</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Address Information -->
+            <div class="profile-card">
+                <div class="profile-section-header">
+                    <div>
+                        <h3>Address Information</h3>
+                        <p class="profile-subtitle">Your delivery address</p>
+                    </div>
+                    <button class="btn-edit-section" id="editAddressBtn">
+                        <i class='bx bxs-edit'></i> Edit
+                    </button>
+                </div>
+                <div class="info-grid">
+                    <div class="info-field">
+                        <span class="info-label">Country</span>
+                        <span class="info-value" id="displayCountry">—</span>
+                    </div>
+                    <div class="info-field">
+                        <span class="info-label">City</span>
+                        <span class="info-value" id="displayCity">—</span>
+                    </div>
+                    <div class="info-field">
+                        <span class="info-label">Postal Code</span>
+                        <span class="info-value" id="displayPostal">—</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Logout Button -->
+        <div class="profile-logout-wrap">
+            <button class="btn-logout-bottom" id="logoutBtn">
+                <i class='bx bx-log-out'></i> Logout
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section main">
+                    <h1>The DailyBread</h1>
+                    <p>"Fresh from the oven, straight to your heart"<br>Get your appetizing pastries now.</p>
+                    <div class="social-links">
+                        <a href="#"><i class='bx bxl-facebook'></i></a>
+                        <a href="#"><i class='bx bxl-instagram'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="#"><i class='bx bxl-pinterest'></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>abc.123@mail.com</li>
+                        <li>09xxxxxxxxx</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Location</h3>
+                    <p>Gov. Drive, San Juan, Dasmarinas Cavite, 4114</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DailyBread. All rights reserved.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Modal: Edit Personal Info -->
+    <div class="modal-overlay" id="modalPersonal">
+        <div class="profile-modal">
+            <div class="modal-header">
+                <h3>Edit Personal Information</h3>
+                <button class="modal-close" data-modal="modalPersonal"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-row">
+                    <div class="modal-field">
+                        <label>First Name</label>
+                        <input type="text" id="inputFirstName" placeholder="First name">
+                    </div>
+                    <div class="modal-field">
+                        <label>Last Name</label>
+                        <input type="text" id="inputLastName" placeholder="Last name">
+                    </div>
+                </div>
+                <div class="modal-row">
+                    <div class="modal-field">
+                        <label>Date of Birth</label>
+                        <input type="date" id="inputDob">
+                    </div>
+                </div>
+                <div class="modal-row">
+                    <div class="modal-field">
+                        <label>Email Address</label>
+                        <input type="email" id="inputEmail" placeholder="email@example.com">
+                    </div>
+                    <div class="modal-field">
+                        <label>Phone Number</label>
+                        <input type="tel" id="inputPhone" placeholder="+63 9xx xxx xxxx">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal-cancel" data-modal="modalPersonal">Cancel</button>
+                <button class="btn-modal-save" id="savePersonalBtn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Edit Address -->
+    <div class="modal-overlay" id="modalAddress">
+        <div class="profile-modal">
+            <div class="modal-header">
+                <h3>Edit Address Information</h3>
+                <button class="modal-close" data-modal="modalAddress"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-row">
+                    <div class="modal-field">
+                        <label>Country</label>
+                        <input type="text" id="inputCountry" placeholder="Country">
+                    </div>
+                    <div class="modal-field">
+                        <label>City</label>
+                        <input type="text" id="inputCity" placeholder="City">
+                    </div>
+                    <div class="modal-field">
+                        <label>Postal Code</label>
+                        <input type="text" id="inputPostal" placeholder="Postal code">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal-cancel" data-modal="modalAddress">Cancel</button>
+                <button class="btn-modal-save" id="saveAddressBtn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Change Password -->
+    <div class="modal-overlay" id="modalPassword">
+        <div class="profile-modal">
+            <div class="modal-header">
+                <h3>Change Password</h3>
+                <button class="modal-close" data-modal="modalPassword"><i class='bx bx-x'></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-row">
+                    <div class="modal-field">
+                        <label>Current Password</label>
+                        <input type="password" id="inputCurrentPw" placeholder="Current password">
+                    </div>
+                </div>
+                <div class="modal-row">
+                    <div class="modal-field">
+                        <label>New Password</label>
+                        <input type="password" id="inputNewPw" placeholder="New password">
+                    </div>
+                    <div class="modal-field">
+                        <label>Confirm New Password</label>
+                        <input type="password" id="inputConfirmPw" placeholder="Confirm new password">
+                    </div>
+                </div>
+                <p class="pw-error" id="pwError"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal-cancel" data-modal="modalPassword">Cancel</button>
+                <button class="btn-modal-save" id="savePasswordBtn">Update Password</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div class="modal-overlay" id="logoutModal">
+        <div class="profile-modal logout-modal">
+            <div class="logout-icon"><i class='bx bx-log-out'></i></div>
+            <h3>Confirm Logout</h3>
+            <p>Are you sure you want to logout?</p>
+            <div class="logout-modal-footer">
+                <button class="btn-modal-cancel" id="logoutCancelBtn">Cancel</button>
+                <button class="btn-logout-confirm" id="logoutConfirmBtn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/profile.js"></script>
+</body>
+</html>

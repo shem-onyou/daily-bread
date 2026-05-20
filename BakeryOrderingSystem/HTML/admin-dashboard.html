@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - DailyBread</title>
+    <link rel="stylesheet" href="../CSS/admin-dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <i class='bx bxs-cookie'></i>
+            <span>DailyBread</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html" class="nav-item active">
+                <i class='bx bxs-dashboard'></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="admin-products.html" class="nav-item">
+                <i class='bx bxs-package'></i>
+                <span>Products</span>
+            </a>
+            <a href="admin-customers.html" class="nav-item">
+                <i class='bx bxs-group'></i>
+                <span>Customers</span>
+            </a>
+            <a href="admin-orders.html" class="nav-item">
+                <i class='bx bxs-cart'></i>
+                <span>Orders</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="btn-logout" id="logoutBtn">
+                <i class='bx bx-log-out'></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Overlay for mobile -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+
+        <!-- Topbar -->
+        <header class="topbar">
+            <button class="toggle-btn" id="toggleBtn">
+                <i class='bx bx-menu'></i>
+            </button>
+            <h1 class="page-title">Dashboard</h1>
+            <div class="topbar-right">
+                <span class="admin-name">Admin</span>
+                <a href="admin-profile.html" class="avatar">A</a>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="content">
+
+            <!-- Metric Cards -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon"><i class='bx bxs-dollar-circle'></i></div>
+                    <div class="metric-info">
+                        <span class="metric-label">Total Revenue</span>
+                        <span class="metric-value">$12,480</span>
+                        <span class="metric-change positive">+8.2% this month</span>    
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon"><i class='bx bxs-cart-alt'></i></div>
+                    <div class="metric-info">
+                        <span class="metric-label">Total Orders</span>
+                        <span class="metric-value">1,024</span>
+                        <span class="metric-change positive">+5.1% this month</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon"><i class='bx bxs-group'></i></div>
+                    <div class="metric-info">
+                        <span class="metric-label">Customers</span>
+                        <span class="metric-value">348</span>
+                        <span class="metric-change positive">+12% this month</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon"><i class='bx bxs-package'></i></div>
+                    <div class="metric-info">
+                        <span class="metric-label">Products</span>
+                        <span class="metric-value">56</span>
+                        <span class="metric-change negative">-2 this month</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Row -->
+            <section class="charts-grid">
+                <div class="chart-card large">
+                    <h3>Revenue Overview</h3>
+                    <p class="chart-subtitle">Monthly revenue for the current year</p>
+                    <div class="chart-placeholder" id="revenueChart">
+                        <i class='bx bx-bar-chart-alt-2'></i>
+                        <span>Revenue Chart</span>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>Weekly Traffic</h3>
+                    <p class="chart-subtitle">Visitors per day this week</p>
+                    <div class="chart-placeholder" id="trafficChart">
+                        <i class='bx bx-line-chart'></i>
+                        <span>Traffic Chart</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Orders (full width) -->
+            <section>
+                <div class="chart-card">
+                    <h3>Recent Orders</h3>
+                    <p class="chart-subtitle">Last 5 transactions</p>
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order</th>
+                                <th>Customer</th>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Logout Modal -->
+    <div class="modal-overlay" id="logoutModal">
+        <div class="modal logout-modal">
+            <div class="logout-icon"><i class='bx bx-log-out'></i></div>
+            <h3>Confirm Logout</h3>
+            <p>Are you sure you want to logout?</p>
+            <div class="logout-modal-footer">
+                <button class="btn-logout-cancel" id="logoutCancelBtn">Cancel</button>
+                <button class="btn-logout-confirm" id="logoutConfirmBtn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/admin-dashboard.js"></script>
+</body>
+</html>

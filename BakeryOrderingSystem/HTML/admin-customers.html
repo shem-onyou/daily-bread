@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers - DailyBread Admin</title>
+    <link rel="stylesheet" href="../CSS/admin-customers.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <i class='bx bxs-cookie'></i>
+            <span>DailyBread</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html" class="nav-item">
+                <i class='bx bxs-dashboard'></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="admin-products.html" class="nav-item">
+                <i class='bx bxs-package'></i>
+                <span>Products</span>
+            </a>
+            <a href="admin-customers.html" class="nav-item active">
+                <i class='bx bxs-group'></i>
+                <span>Customers</span>
+            </a>
+            <a href="admin-orders.html" class="nav-item">
+                <i class='bx bxs-cart'></i>
+                <span>Orders</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="btn-logout" id="logoutBtn">
+                <i class='bx bx-log-out'></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Overlay for mobile -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <div class="main-wrapper">
+
+        <!-- Topbar -->
+        <header class="topbar">
+            <button class="toggle-btn" id="toggleBtn">
+                <i class='bx bx-menu'></i>
+            </button>
+            <h1 class="page-title">Customers</h1>
+            <div class="topbar-right">
+                <span class="admin-name">Admin</span>
+                <a href="admin-profile.html" class="avatar">A</a>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main class="content">
+
+            <!-- Customers Table Card -->
+            <div class="chart-card">
+                <div class="table-header">
+                    <div>
+                        <h3>All Customers</h3>
+                        <p class="chart-subtitle">View and manage your registered customers</p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="customers-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Contact No.</th>
+                                <th>Orders</th>
+                                <th>Message</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customersTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Message Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalCustomerName">Customer Message</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+            <p class="modal-message" id="modalMessage"></p>
+        </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div class="modal-overlay" id="logoutModal">
+        <div class="modal logout-modal">
+            <div class="logout-icon"><i class='bx bx-log-out'></i></div>
+            <h3>Confirm Logout</h3>
+            <p>Are you sure you want to logout?</p>
+            <div class="logout-modal-footer">
+                <button class="btn-logout-cancel" id="logoutCancelBtn">Cancel</button>
+                <button class="btn-logout-confirm" id="logoutConfirmBtn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/admin-customers.js"></script>
+</body>
+</html>
